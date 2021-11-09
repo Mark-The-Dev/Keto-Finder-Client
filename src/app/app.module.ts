@@ -7,11 +7,13 @@ import {AppRoutingModule} from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { MealCardListComponent } from './meal-card/meal-card-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    MealCardListComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatButtonModule,
   ],
   providers: [],
+  exports: [
+    MealCardListComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

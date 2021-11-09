@@ -1,3 +1,16 @@
 <div class="home-container">
   <h2>Welcome to Keto Finder</h2>
+
+  <div class="restaurant-row">
+    <ng-container *ngFor="let bundle of restaurantResponse$ | async; trackBy: id">
+      <ng-container class="restaurant-column">
+        <app-meal-card-list
+          [restaurantName]="bundle.restaurantName"
+          [restaurantMeals]="bundle.restaurantMeals"
+        >
+        </app-meal-card-list>
+      </ng-container>
+    </ng-container>
+
+  </div>
 </div>

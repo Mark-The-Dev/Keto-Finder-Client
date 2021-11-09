@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {RestaurantService} from '../service/restaurant.service';
+import {Observable} from 'rxjs';
+import {RestaurantBundleDTO} from '../models/RestaurantBundleDTO';
 
 
 @Component({
@@ -8,4 +11,9 @@ import {Component} from '@angular/core';
 })
 export class HomeComponent {
 
+  constructor(
+    public restaurantService: RestaurantService
+  ) {}
+
+  public restaurantResponse$: Observable<RestaurantBundleDTO[]> = this.restaurantService.getAllMeals();
 }
