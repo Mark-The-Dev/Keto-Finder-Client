@@ -1,1 +1,18 @@
-<p>meal-card works!</p>
+<ng-container class="restaurant-container">
+  <h3>{{ restaurantName }}</h3>
+  <ng-container *ngFor="let meal of restaurantMeals">
+    <mat-card>
+      <mat-card-title>{{ meal.mealName }}</mat-card-title>
+      <mat-card-content>
+        <p>{{ meal.mealDescription }}</p>
+        <div class="nutrition">
+          <p>Calories: {{ meal.calories }}</p>
+          <p>Protein: {{ meal.proteinValue }}</p>
+          <p>Fat: {{ meal.fatValue }}</p>
+          <p>Total Carbs: {{ meal.carbValue }}</p>
+          <p><b>Net Carbs: {{ meal.netCarbValue }}</b></p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</ng-container>

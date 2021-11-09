@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {AppRoutingModule} from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { MealCardListComponent } from './meal-card/meal-card-list.component';
+import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { MealCardListComponent } from './meal-card/meal-card-list.component';
     AppRoutingModule,
     MatCardModule,
     MatButtonModule,
+    HttpClientModule,
   ],
-  providers: [],
-  exports: [
-    MealCardListComponent
+  providers: [
+    { provide: 'env', useValue: environment },
+    HttpClientModule,
   ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
