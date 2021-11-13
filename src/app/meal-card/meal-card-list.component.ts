@@ -13,6 +13,7 @@ export class MealCardListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.restaurantMeals);
   }
 
 }

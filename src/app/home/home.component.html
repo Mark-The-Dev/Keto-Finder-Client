@@ -5,7 +5,7 @@
     <ng-container *ngFor="let bundle of restaurantResponse$ | async;">
       <app-meal-card-list
         [restaurantName]="bundle.restaurantName"
-        [restaurantMeals]="bundle.restaurantMeals"
+        [restaurantMeals]="bundle.restaurantItems"
       >
       </app-meal-card-list>
     </ng-container>

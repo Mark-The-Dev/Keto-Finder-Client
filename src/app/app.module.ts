@@ -10,12 +10,14 @@ import { MealCardListComponent } from './meal-card/meal-card-list.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
+import {HomeComponent} from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MealCardListComponent
+    MealCardListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,9 @@ import {environment} from '../environments/environment';
     { provide: 'env', useValue: environment },
     HttpClientModule,
   ],
-  exports: [],
+  exports: [
+    MealCardListComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

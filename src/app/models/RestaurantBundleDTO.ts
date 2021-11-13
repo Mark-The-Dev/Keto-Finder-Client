@@ -1,6 +1,6 @@
 export interface RestaurantBundleDTO {
   restaurantName: string;
-  restaurantMeals: RestaurantItem[];
+  restaurantItems: RestaurantItem[];
 }
 
 export interface RestaurantItem {

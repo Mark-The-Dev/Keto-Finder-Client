@@ -1,7 +1,7 @@
 <ng-container class="restaurant-container">
   <h3>{{ restaurantName }}</h3>
   <ng-container *ngFor="let meal of restaurantMeals">
-    <mat-card>
+    <mat-card class="meal-item">
       <mat-card-title>{{ meal.mealName }}</mat-card-title>
       <mat-card-content>
         <p>{{ meal.mealDescription }}</p>
