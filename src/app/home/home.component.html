@@ -1,10 +1,10 @@
 <div class="home-container">
   <h2>Welcome to Keto Finder</h2>
 
-  <div class="restaurant-row">
+  <div class="restaurant-col">
     <ng-container *ngFor="let bundle of restaurantResponse$ | async;">
+      <h3>{{ bundle.restaurantName }}</h3>
       <app-meal-card-list
-        [restaurantName]="bundle.restaurantName"
         [restaurantMeals]="bundle.restaurantItems"
       >
       </app-meal-card-list>

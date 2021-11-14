@@ -7,7 +7,6 @@ import {RestaurantItem} from '../models/RestaurantBundleDTO';
   styleUrls: ['./meal-card-list.component.css']
 })
 export class MealCardListComponent implements OnInit {
-  @Input() restaurantName: string;
   @Input() restaurantMeals: RestaurantItem[];
 
   constructor() { }
