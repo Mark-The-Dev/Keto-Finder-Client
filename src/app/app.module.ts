@@ -12,13 +12,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {HomeComponent} from './home/home.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { RestaurantViewComponent } from './restaurant-view/restaurant-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MealCardListComponent,
-    HomeComponent
+    HomeComponent,
+    RestaurantViewComponent
   ],
   imports: [
     BrowserModule,

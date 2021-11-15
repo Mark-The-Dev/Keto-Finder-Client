@@ -1,6 +1,13 @@
 <div class="home-container">
   <h2>Welcome to Keto Finder</h2>
 
+  <p class="app-description">
+    <i>Keto finder</i>&reg; is a helpful tool built to help find people Keto appropriate meals while on the go.
+    Typically if a food or beverage is between 0 to 2 grams of net carbs per 100 calories, it is considered keto.
+    Some items on this list may slightly escape those bounds, however this is more of a reference than an absolute point of truth,
+    use this resource with a grain of salt 🧂
+  </p>
+
   <div class="restaurant-col">
     <ng-container *ngFor="let bundle of restaurantResponse$ | async;">
       <h3>{{ bundle.restaurantName }}</h3>
