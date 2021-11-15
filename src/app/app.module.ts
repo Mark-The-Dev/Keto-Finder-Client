@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {HomeComponent} from './home/home.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {HomeComponent} from './home/home.component';
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
+    MatToolbarModule,
   ],
   providers: [
     { provide: 'env', useValue: environment },
