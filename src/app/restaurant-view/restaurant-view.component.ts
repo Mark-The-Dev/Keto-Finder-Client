@@ -16,7 +16,8 @@ export class RestaurantViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(history.state);
+    this.restaurantInfo = history.state.restaurant;
+    console.log(this.restaurantInfo);
   }
 
 }

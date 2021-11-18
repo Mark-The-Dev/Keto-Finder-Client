@@ -1,1 +1,9 @@
-<p>restaurant-view works!</p>
+<div class="restaurant-view" *ngIf="restaurantInfo">
+  <h2>{{ restaurantInfo.restaurantName}}</h2>
+
+  <app-meal-card-list
+  [restaurantMeals]="restaurantInfo.restaurantItems"
+  >
+  </app-meal-card-list>
+</div>
+
