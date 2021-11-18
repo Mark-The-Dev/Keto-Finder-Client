@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RestaurantService} from '../service/restaurant.service';
 import {Observable} from 'rxjs';
 import {RestaurantBundleDTO} from '../models/RestaurantBundleDTO';
-import {Router} from '@angular/router';
+import {NavigationExtras, Router} from '@angular/router';
 
 
 @Component({
@@ -22,9 +22,9 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     this.restaurantResponse$ = this.restaurantService.getAllMeals();
   }
-  navigateTo(restaurantName: string): void{
+  navigateTo(restaurantName: string, restaurantInfo: RestaurantBundleDTO): void{
     const urlSlug = restaurantName.split(' ').join('-');
-    this.router.navigate([`/restaurants/${urlSlug}`]);
+    this.router.navigateByUrl(`/restaurants/${urlSlug}`, {state : {restaurant: restaurantInfo}});
 
   }
 }

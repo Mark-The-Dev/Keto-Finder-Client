@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {RestaurantBundleDTO} from '../models/RestaurantBundleDTO';
 
 @Component({
   selector: 'app-restaurant-view',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantViewComponent implements OnInit {
 
-  constructor() { }
+  restaurantInfo: RestaurantBundleDTO;
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    console.log(history.state);
   }
 
 }
