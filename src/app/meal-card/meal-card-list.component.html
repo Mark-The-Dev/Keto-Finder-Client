@@ -1,17 +1,17 @@
-<ng-container class="restaurant-container">
+<div class="restaurant-container">
   <ng-container *ngFor="let meal of restaurantMeals">
-    <mat-card class="meal-item">
-      <mat-card-title>{{ meal.mealName }}</mat-card-title>
-      <mat-card-content>
-        <p>{{ meal.mealDescription }}</p>
-        <div class="nutrition">
-          <p>Calories: {{ meal.calories }}</p>
-          <p>Protein: {{ meal.proteinValue }} grams</p>
-          <p>Fat: {{ meal.fatValue }} grams</p>
-          <p>Total Carbs: {{ meal.carbValue }} grams</p>
-          <p><b>Net Carbs: {{ meal.netCarbValue }} grams</b></p>
-        </div>
-      </mat-card-content>
-    </mat-card>
+      <mat-card class="meal-item">
+        <mat-card-title>{{ meal.mealName }}</mat-card-title>
+        <mat-card-content>
+          <p>{{ meal.mealDescription }}</p>
+          <div class="nutrition">
+            <p>Calories: {{ meal.calories }}</p>
+            <p>Protein: {{ meal.proteinValue }} grams</p>
+            <p>Fat: {{ meal.fatValue }} grams</p>
+            <p>Total Carbs: {{ meal.carbValue }} grams</p>
+            <p><b>Net Carbs: {{ meal.netCarbValue }} grams</b></p>
+          </div>
+        </mat-card-content>
+      </mat-card>
   </ng-container>
-</ng-container>
+</div>
