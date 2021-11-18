@@ -1,4 +1,5 @@
 export interface RestaurantBundleDTO {
+  restaurantId: number;
   restaurantName: string;
   restaurantItems: RestaurantItem[];
 }

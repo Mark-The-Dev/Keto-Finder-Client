@@ -13,6 +13,8 @@ import {environment} from '../environments/environment';
 import {HomeComponent} from './home/home.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { RestaurantViewComponent } from './restaurant-view/restaurant-view.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { RestaurantViewComponent } from './restaurant-view/restaurant-view.compo
     MatButtonModule,
     HttpClientModule,
     MatToolbarModule,
+    MatSelectModule,
+    MatOptionModule,
   ],
   providers: [
     { provide: 'env', useValue: environment },

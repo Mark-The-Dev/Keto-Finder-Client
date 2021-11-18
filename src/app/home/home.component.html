@@ -8,9 +8,21 @@
     use this resource with a grain of salt 🧂
   </p>
 
+  <mat-form-field>
+    <mat-label>Restaurant List</mat-label>
+    <mat-select placeholder="Pick a Restaurant" (selectionChange)="navigateTo($event.value)">
+      <mat-option *ngFor="let restaurant of restaurantResponse$ | async;" [value]="restaurant.restaurantName">
+        {{ restaurant.restaurantName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
   <div class="restaurant-col">
     <ng-container *ngFor="let bundle of restaurantResponse$ | async;">
       <h3>{{ bundle.restaurantName }}</h3>
+
+
       <app-meal-card-list
         [restaurantMeals]="bundle.restaurantItems"
       >
