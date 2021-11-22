@@ -15,6 +15,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { RestaurantViewComponent } from './restaurant-view/restaurant-view.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import { AddMealComponent } from './add-meal/add-meal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {MatOptionModule} from '@angular/material/core';
     HeaderComponent,
     MealCardListComponent,
     HomeComponent,
-    RestaurantViewComponent
+    RestaurantViewComponent,
+    AddMealComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import {MatOptionModule} from '@angular/material/core';
     MatToolbarModule,
     MatSelectModule,
     MatOptionModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: 'env', useValue: environment },
