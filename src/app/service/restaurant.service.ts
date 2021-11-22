@@ -15,8 +15,8 @@ export class RestaurantService {
     return this.http.get<RestaurantBundleDTO[]>(`${this.env.apiUrl}/restaurants`);
   }
 
-  getRestaurantByName(restaurantName: string): Observable<RestaurantBundleDTO> {
-    return this.http.get<RestaurantBundleDTO>(`${this.env.apiUrl}/restaurants/${restaurantName}`);
+  getRestaurantById(restaurantId: string): Observable<RestaurantBundleDTO> {
+    return this.http.get<RestaurantBundleDTO>(`${this.env.apiUrl}/restaurants/${restaurantId}`);
   }
 
   addRestaurant(restaurant: RestaurantBundleDTO): void {

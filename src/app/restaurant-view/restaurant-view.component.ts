@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
 import {RestaurantBundleDTO} from '../models/RestaurantBundleDTO';
+import {RestaurantService} from '../service/restaurant.service';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-restaurant-view',
@@ -12,12 +13,18 @@ export class RestaurantViewComponent implements OnInit {
   restaurantInfo: RestaurantBundleDTO;
 
   constructor(
-    private router: Router
+    public restaurantService: RestaurantService,
   ) { }
 
   ngOnInit(): void {
-    this.restaurantInfo = history.state.restaurant;
-    console.log(this.restaurantInfo);
-  }
+    if ( history.state.restaurant ) {
+      this.restaurantInfo = history.state.restaurant;
+      localStorage.setItem('restaurantId', history.state.restaurant.restaurantId);
 
+    } else {
+      const restaurantId: string = localStorage.getItem('restaurantId') || '1';
+      this.restaurantService.getRestaurantById(restaurantId).pipe(take(1))
+        .subscribe( result => this.restaurantInfo = result);
+    }
+  }
 }
