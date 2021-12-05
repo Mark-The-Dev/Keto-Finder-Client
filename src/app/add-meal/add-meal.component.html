@@ -1,37 +1,53 @@
-<div class="meal-form">
+<mat-card class="meal-form">
   <form [formGroup]="mealForm" (ngSubmit)="mealSubmit()">
-    <p>
-      <label for="mealName">Meal Name</label>
-      <input type="text" id="mealName" name="mealName" formControlName="mealName">
-    </p>
-    <p>
-      <label for="mealDescription">Meal Description</label>
-      <input type="text" id="mealDescription" name="mealDescription" formControlName="mealDescription">
-    </p>
-    <p>
-      <label for="calories">Calories (in grams)</label>
-      <input type="number" id="calories" name="calories" formControlName="calories">
-    </p>
-    <p>
-      <label for="proteinValue">Protein (in grams)</label>
-      <input type="number" id="proteinValue" name="proteinValue" formControlName="proteinValue">
-    </p>
-    <p>
-      <label for="fatValue">Fat (in grams)</label>
-      <input type="number" id="fatValue" name="fatValue" formControlName="fatValue">
-    </p>
-    <p>
-      <label for="carbValue">Total Carbs (in grams)</label>
-      <input type="number" id="carbValue" name="carbValue" formControlName="carbValue">
-    </p>
-    <p>
-      <label for="netCarbValue">Net Carbs (in grams)</label>
-      <input type="number" id="netCarbValue" name="netCarbValue" formControlName="netCarbValue">
-    </p>
+    <mat-card-title>Add a Meal!</mat-card-title>
+    <mat-card-content>
 
-    <p>
-      <button type="submit" [disabled]="!mealForm.valid">Submit</button>
-    </p>
+        <mat-form-field appearance="outline">
+          <label for="mealName">Meal Name:</label>
+          <input type="text" id="mealName" name="mealName" formControlName="mealName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <label for="mealDescription">Meal Description:</label>
+          <textarea type="text" id="mealDescription" name="mealDescription"
+                    formControlName="mealDescription"
+                    cdkTextareaAutosize cdkAutosizeMinRows="4"
+                    cdkAutosizeMaxRows="10"
+          >
 
+      </textarea>
+        </mat-form-field>
+
+      <div class="two-count">
+        <mat-form-field appearance="outline">
+          <label for="calories">Calories (in grams):</label>
+          <input type="number" id="calories" name="calories" formControlName="calories">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <label for="proteinValue">Protein (in grams):</label>
+          <input type="number" id="proteinValue" name="proteinValue" formControlName="proteinValue">
+        </mat-form-field>
+      </div>
+
+      <div class="two-count">
+        <mat-form-field appearance="outline">
+          <label for="fatValue">Fat (in grams):</label>
+          <input type="number" id="fatValue" name="fatValue" formControlName="fatValue">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <label for="carbValue">Total Carbs (in grams):</label>
+          <input type="number" id="carbValue" name="carbValue" formControlName="carbValue">
+        </mat-form-field>
+      </div>
+
+      <div class="two-count">
+        <mat-form-field appearance="outline">
+          <label for="netCarbValue">Net Carbs (in grams):</label>
+          <input type="number" id="netCarbValue" name="netCarbValue" formControlName="netCarbValue">
+        </mat-form-field>
+          <button type="submit" [disabled]="!mealForm.valid">Submit</button>
+
+      </div>
+    </mat-card-content>
   </form>
-</div>
+</mat-card>
