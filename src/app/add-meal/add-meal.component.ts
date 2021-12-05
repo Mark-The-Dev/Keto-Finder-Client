@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RestaurantItem} from '../models/RestaurantBundleDTO';
 
@@ -12,20 +12,14 @@ export class AddMealComponent implements OnInit {
   mealForm: FormGroup;
   newMeal: RestaurantItem;
 
-  formErrors = {
-    mealName: '',
-    mealDescription: '',
-    calories: '',
-    proteinValue: '',
-    fatValue: '',
-    carbValue: '',
-    netCarbValue: ''
-  };
+  @Input() restaurantId: string;
+
   constructor(
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
+    this.createForm();
   }
 
   private createForm(): void {
@@ -42,6 +36,7 @@ export class AddMealComponent implements OnInit {
 
   public mealSubmit(): void {
     this.newMeal = this.mealForm.value;
+    console.log(this.newMeal);
 
     // TODO: add post here
 
