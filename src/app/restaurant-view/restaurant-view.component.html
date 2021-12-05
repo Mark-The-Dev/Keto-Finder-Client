@@ -1,4 +1,5 @@
-<div class="restaurant-view" *ngIf="restaurantInfo">
+<div
+  class="restaurant-view" *ngIf="restaurantInfo">
   <h2>{{ restaurantInfo.restaurantName}}</h2>
 
   <app-meal-card-list
@@ -7,6 +8,7 @@
   </app-meal-card-list>
   <app-add-meal
     [restaurantId]="restaurantId"
+    (newMealAdd)="addNewMealToList($event)"
   >
 
   </app-add-meal>

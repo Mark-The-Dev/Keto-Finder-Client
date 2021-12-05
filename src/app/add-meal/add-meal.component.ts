@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RestaurantItem} from '../models/RestaurantBundleDTO';
+import {RestaurantService} from '../service/restaurant.service';
 
 @Component({
   selector: 'app-add-meal',
@@ -13,10 +14,13 @@ export class AddMealComponent implements OnInit {
   newMeal: RestaurantItem;
 
   @Input() restaurantId: string;
+  @Output() newMealAdd = new EventEmitter<RestaurantItem>();
 
   constructor(
-    private formBuilder: FormBuilder
-  ) { }
+    private formBuilder: FormBuilder,
+    private restaurantService: RestaurantService
+  ) {
+  }
 
   ngOnInit(): void {
     this.createForm();
@@ -37,11 +41,19 @@ export class AddMealComponent implements OnInit {
   public mealSubmit(): void {
     this.newMeal = this.mealForm.value;
     console.log(this.newMeal);
-
-    // TODO: add post here
+    this.addNewMeal(this.newMeal);
+    this.emitNewMealToView(this.newMeal);
 
     // reset form
     this.mealForm.reset();
+  }
+
+  private addNewMeal(newMeal: RestaurantItem): void {
+    this.restaurantService.addRestaurantMeal(newMeal, this.restaurantId);
+  }
+
+  private emitNewMealToView(newMeal: RestaurantItem): void {
+    this.newMealAdd.emit(newMeal);
   }
 
 }

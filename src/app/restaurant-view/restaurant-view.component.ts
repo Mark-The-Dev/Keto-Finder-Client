@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {RestaurantBundleDTO, RestaurantItem} from '../models/RestaurantBundleDTO';
 import {RestaurantService} from '../service/restaurant.service';
 import {take} from 'rxjs/operators';
@@ -12,25 +12,29 @@ export class RestaurantViewComponent implements OnInit {
 
   restaurantInfo: RestaurantBundleDTO;
   restaurantId: string;
-  newMeal: RestaurantItem;
 
   constructor(
     public restaurantService: RestaurantService,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
-    if ( history.state.restaurant ) {
+    if (history.state.restaurant) {
       this.restaurantInfo = history.state.restaurant;
       localStorage.setItem('restaurantId', history.state.restaurant.restaurantId);
 
     } else {
-      this.restaurantId = localStorage.getItem('restaurantId') || '1';
-      this.restaurantService.getRestaurantById(this.restaurantId).pipe(take(1))
-        .subscribe( result => this.restaurantInfo = result);
+      this.renderMeals();
     }
   }
 
-  public addNewMeal(): void {
-    this.restaurantService.addRestaurantMeal(this.newMeal, this.restaurantId);
+  public renderMeals(): void {
+    this.restaurantId = localStorage.getItem('restaurantId') || '1';
+    this.restaurantService.getRestaurantById(this.restaurantId).pipe(take(1))
+      .subscribe(result => this.restaurantInfo = result);
+  }
+
+  public addNewMealToList(addedMeal: RestaurantItem): void {
+    this.restaurantInfo.restaurantItems.push(addedMeal);
   }
 }

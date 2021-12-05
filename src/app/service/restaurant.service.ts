@@ -1,7 +1,8 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {RestaurantBundleDTO, RestaurantItem} from '../models/RestaurantBundleDTO';
+import {take} from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 export class RestaurantService {
@@ -24,7 +25,8 @@ export class RestaurantService {
   }
 
   addRestaurantMeal(restaurantMeal: RestaurantItem, restaurantId: string): void {
-    this.http.post<RestaurantBundleDTO>(`${this.env.apiUrl}/restaurants/${restaurantId}`, restaurantMeal);
+    this.http.post<RestaurantItem>(`${this.env.apiUrl}/restaurants/addMeal/${restaurantId}`, restaurantMeal)
+      .pipe(take(1)).subscribe();
   }
 
 
