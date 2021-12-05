@@ -3,13 +3,13 @@
     <mat-card-title>Add a Meal!</mat-card-title>
     <mat-card-content>
 
-        <mat-form-field appearance="outline">
-          <label for="mealName">Meal Name:</label>
-          <input type="text" id="mealName" name="mealName" formControlName="mealName">
+        <mat-form-field appearance="outline" >
+          <mat-label for="mealName">Meal Name:</mat-label>
+          <input matInput type="text" id="mealName" formControlName="mealName" placeholder="Placeholder" />
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <label for="mealDescription">Meal Description:</label>
-          <textarea type="text" id="mealDescription" name="mealDescription"
+          <mat-label for="mealDescription">Meal Description:</mat-label>
+          <textarea matInput type="text" id="mealDescription" name="mealDescription" placeholder="Placeholder"
                     formControlName="mealDescription"
                     cdkTextareaAutosize cdkAutosizeMinRows="4"
                     cdkAutosizeMaxRows="10"
@@ -20,30 +20,30 @@
 
       <div class="two-count">
         <mat-form-field appearance="outline">
-          <label for="calories">Calories (in grams):</label>
-          <input type="number" id="calories" name="calories" formControlName="calories">
+          <mat-label for="calories">Calories (in grams):</mat-label>
+          <input matInput type="number" id="calories" name="calories" formControlName="calories" />
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <label for="proteinValue">Protein (in grams):</label>
-          <input type="number" id="proteinValue" name="proteinValue" formControlName="proteinValue">
-        </mat-form-field>
-      </div>
-
-      <div class="two-count">
-        <mat-form-field appearance="outline">
-          <label for="fatValue">Fat (in grams):</label>
-          <input type="number" id="fatValue" name="fatValue" formControlName="fatValue">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <label for="carbValue">Total Carbs (in grams):</label>
-          <input type="number" id="carbValue" name="carbValue" formControlName="carbValue">
+          <mat-label for="proteinValue">Protein (in grams):</mat-label>
+          <input matInput type="number" id="proteinValue" name="proteinValue" formControlName="proteinValue" />
         </mat-form-field>
       </div>
 
       <div class="two-count">
         <mat-form-field appearance="outline">
-          <label for="netCarbValue">Net Carbs (in grams):</label>
-          <input type="number" id="netCarbValue" name="netCarbValue" formControlName="netCarbValue">
+          <mat-label for="fatValue">Fat (in grams):</mat-label>
+          <input matInput type="number" id="fatValue" name="fatValue" formControlName="fatValue" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label for="carbValue">Total Carbs (in grams):</mat-label>
+          <input matInput type="number" id="carbValue" name="carbValue" formControlName="carbValue" />
+        </mat-form-field>
+      </div>
+
+      <div class="two-count">
+        <mat-form-field appearance="outline">
+          <mat-label for="netCarbValue">Net Carbs (in grams):</mat-label>
+          <input matInput type="number" id="netCarbValue" name="netCarbValue" formControlName="netCarbValue" />
         </mat-form-field>
           <button type="submit" [disabled]="!mealForm.valid">Submit</button>
 

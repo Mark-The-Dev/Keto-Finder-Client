@@ -24,3 +24,7 @@ mat-card-content {
   margin-right: 20px;
 }
 
+mat-card-content .two-count:last-child {
+  display: flex;
+  justify-content: space-between;
+}
