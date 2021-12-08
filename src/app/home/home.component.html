@@ -10,24 +10,11 @@
 
   <mat-form-field>
     <mat-label>Restaurant List</mat-label>
-    <mat-select placeholder="Pick a Restaurant" (selectionChange)="navigateTo($event.value.restaurantName, $event.value)">
+    <mat-select placeholder="Pick a Restaurant"
+                (selectionChange)="navigateTo($event.value.restaurantName, $event.value)">
       <mat-option *ngFor="let restaurant of restaurantResponse$ | async;" [value]="restaurant">
         {{ restaurant.restaurantName }}
       </mat-option>
     </mat-select>
   </mat-form-field>
-
-
-  <div class="restaurant-col">
-<!--    <ng-container *ngFor="let bundle of restaurantResponse$ | async;">-->
-<!--      <h3>{{ bundle.restaurantName }}</h3>-->
-
-
-<!--&lt;!&ndash;      <app-meal-card-list&ndash;&gt;-->
-<!--&lt;!&ndash;        [restaurantMeals]="bundle.restaurantItems"&ndash;&gt;-->
-<!--&lt;!&ndash;      >&ndash;&gt;-->
-<!--&lt;!&ndash;      </app-meal-card-list>&ndash;&gt;-->
-<!--    </ng-container>-->
-
-  </div>
 </div>
