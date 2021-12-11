@@ -5,7 +5,7 @@
 
         <mat-form-field appearance="outline" >
           <mat-label for="mealName">Meal Name:</mat-label>
-          <input matInput type="text" id="mealName" formControlName="mealName" placeholder="Placeholder" />
+          <input matInput type="text" id="mealName" formControlName="mealName" placeholder="Meal Name" />
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label for="mealDescription">Meal Description:</mat-label>
@@ -14,7 +14,6 @@
                     cdkTextareaAutosize cdkAutosizeMinRows="4"
                     cdkAutosizeMaxRows="10"
           >
-
       </textarea>
         </mat-form-field>
 
@@ -45,7 +44,7 @@
           <mat-label for="netCarbValue">Net Carbs (in grams):</mat-label>
           <input matInput type="number" id="netCarbValue" name="netCarbValue" formControlName="netCarbValue" />
         </mat-form-field>
-          <button mat-button type="submit" [disabled]="!mealForm.valid">Submit</button>
+          <button mat-stroked-button color="primary" type="submit" [disabled]="!mealForm.valid">Submit</button>
 
       </div>
     </mat-card-content>

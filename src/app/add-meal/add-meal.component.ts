@@ -26,6 +26,7 @@ export class AddMealComponent implements OnInit {
     this.createForm();
   }
 
+  // Simple form set up with required fields
   private createForm(): void {
     this.mealForm = this.formBuilder.group({
       mealName: ['', Validators.required],
@@ -39,13 +40,10 @@ export class AddMealComponent implements OnInit {
   }
 
   public mealSubmit(): void {
-    this.newMeal = this.mealForm.value;
-    console.log(this.newMeal);
-    this.addNewMeal(this.newMeal);
-    this.emitNewMealToView(this.newMeal);
-
-    // reset form
-    this.mealForm.reset();
+    this.newMeal = this.mealForm.value; // Set Request Object based on form data
+    this.addNewMeal(this.newMeal); // POST request
+    this.emitNewMealToView(this.newMeal); // output event to parent view
+    this.mealForm.reset(); // reset form
   }
 
   private addNewMeal(newMeal: RestaurantItem): void {
