@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit{
   // Lifecycle hook - OnInit will fire when the component is created
   ngOnInit(): void {
     // Request to grab all restaurant data.
-    this.restaurantResponse$ = this.restaurantService.getAllMeals();
+    this.restaurantResponse$ = this.restaurantService.getAllRestaurantData();
   }
 
   // Simple navigate method for the html template

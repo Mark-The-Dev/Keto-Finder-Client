@@ -15,7 +15,7 @@ export class RestaurantService {
     @Inject('env') private env) /*Inject environment for requests */{}
 
   // Simple get request to fetch all restaurants and meals.
-  getAllMeals(): Observable<RestaurantBundleDTO[]> {
+  getAllRestaurantData(): Observable<RestaurantBundleDTO[]> {
     return this.http.get<RestaurantBundleDTO[]>(`${this.env.apiUrl}/restaurants`, this.httpOptions);
   }
 
